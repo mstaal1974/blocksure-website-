@@ -12,27 +12,89 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin:0; }
+    img { max-width: 100%; }
     @keyframes floaty { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
     a { -webkit-tap-highlight-color: transparent; }
+
+    /* ===== Mobile menu (hidden on desktop) ===== */
+    .nav-toggle, .nav-burger, .nav-panel { display: none; }
+
+    /* ===== Tablet & below ===== */
+    @media (max-width: 960px) {
+      /* Collapse every grid to one column by default ... */
+      div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      /* ... but keep card grids and the footer at two columns */
+      div[style*="grid-template-columns:repeat(3,1fr)"],
+      div[style*="grid-template-columns:repeat(4,1fr)"],
+      div[style*="grid-template-columns:repeat(5,1fr)"],
+      div[style*="grid-template-columns:1.4fr 1fr 1fr 1fr"] { grid-template-columns: repeat(2,1fr) !important; }
+      /* Drop the dark metric-band dividers once stacked */
+      div[style*="border-left:1px solid rgba(255,255,255,.1)"] { border-left: none !important; }
+      /* Hide fixed-pixel decorative visuals that can't reflow (home hero + ecosystem diagram) */
+      div[style*="height:500px"], div[style*="height:600px"] { display: none !important; }
+
+      /* Mobile nav */
+      .site-nav .nav-links, .site-nav .nav-actions { display: none !important; }
+      .nav-burger {
+        display: flex !important; flex-direction: column; justify-content: center; gap: 5px;
+        width: 44px; height: 44px; padding: 11px; margin: 0; cursor: pointer;
+        border: 1px solid #ECEEF6; border-radius: 11px; background: #fff;
+      }
+      .nav-burger span { display: block; width: 100%; height: 2px; border-radius: 2px; background: #0F1535; transition: transform .22s ease, opacity .22s ease; }
+      .nav-panel {
+        display: none; position: absolute; top: 74px; left: 0; right: 0;
+        flex-direction: column; padding: 12px clamp(20px,4vw,52px) 22px;
+        background: rgba(255,255,255,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid #ECEEF6; box-shadow: 0 26px 44px -26px rgba(15,21,53,.30);
+        font-family: 'Hanken Grotesk', sans-serif;
+      }
+      .nav-toggle:checked ~ .nav-panel { display: flex; }
+      .nav-panel a { padding: 13px 4px; font-size: 16px; font-weight: 600; color: #0F1535; text-decoration: none; border-bottom: 1px solid #F1F3F9; }
+      .nav-panel a.nav-panel-signin { color: #3a3fb8; border-bottom: none; }
+      .nav-panel a.nav-panel-cta { margin-top: 12px; padding: 14px; text-align: center; color: #fff; border: none; border-radius: 11px; background: linear-gradient(120deg,#5B8DEF,#8B5CF6); }
+      .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+      .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+
+    /* ===== Phone ===== */
+    @media (max-width: 620px) {
+      div[style*="grid-template-columns:repeat(3,1fr)"],
+      div[style*="grid-template-columns:repeat(4,1fr)"],
+      div[style*="grid-template-columns:1.4fr 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      /* Footer bottom row stacks */
+      footer div[style*="justify-content:space-between"] { flex-direction: column; gap: 10px; align-items: flex-start !important; text-align: left; }
+    }
   </style>
 </head>
 <body>
 <div style="background:#fff; font-family:'Hanken Grotesk',sans-serif; color:#0F1535; overflow-x:hidden;">
-  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; height:74px; padding:0 clamp(20px,4vw,52px); background:rgba(255,255,255,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid #ECEEF6; font-family:'Hanken Grotesk',sans-serif;">
+  <nav class="site-nav" style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; height:74px; padding:0 clamp(20px,4vw,52px); background:rgba(255,255,255,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid #ECEEF6; font-family:'Hanken Grotesk',sans-serif;">
     <a href="index.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
       <img src="assets/blocksure-mark-navy.png" alt="Blocksure" style="height:30px; width:auto; display:block;">
       <span style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.01em; color:#0F1535;">Blocksure</span>
     </a>
-    <div style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+    <div class="nav-links" style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
       <a href="platform.html" style="text-decoration:none; color:#4a5170;">Platform</a>
       <a href="marketplace.html" style="text-decoration:none; color:#4a5170;">Marketplace</a>
       <a href="solutions.html" style="text-decoration:none; color:#4a5170;">Solutions</a>
       <a href="simulab.html" style="text-decoration:none; color:#0F1535;">Simulab</a>
       <a href="index.html#contact" style="text-decoration:none; color:#4a5170;">Company</a>
     </div>
-    <div style="display:flex; align-items:center; gap:18px;">
+    <div class="nav-actions" style="display:flex; align-items:center; gap:18px;">
       <a href="index.html#contact" style="text-decoration:none; font-size:15px; font-weight:600; color:#3a3fb8;">Sign in</a>
       <a href="index.html#contact" style="text-decoration:none; font-size:14.5px; font-weight:700; color:#fff; background:linear-gradient(120deg,#5B8DEF,#8B5CF6); padding:11px 21px; border-radius:10px; box-shadow:0 6px 18px -6px rgba(110,90,230,.5);">Book a demo</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="nav-burger" role="button" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
+    <div class="nav-panel">
+      <a href="platform.html">Platform</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="simulab.html">Simulab</a>
+      <a href="index.html#contact">Company</a>
+      <a href="index.html#contact" class="nav-panel-signin">Sign in</a>
+      <a href="index.html#contact" class="nav-panel-cta">Book a demo</a>
     </div>
   </nav>
 
