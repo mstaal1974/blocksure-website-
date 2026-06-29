@@ -19,21 +19,8 @@
     /* ===== Mobile menu (hidden on desktop) ===== */
     .nav-toggle, .nav-burger, .nav-panel { display: none; }
 
-    /* ===== Tablet & below ===== */
-    @media (max-width: 960px) {
-      /* Collapse every grid to one column by default ... */
-      div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-      /* ... but keep card grids and the footer at two columns */
-      div[style*="grid-template-columns:repeat(3,1fr)"],
-      div[style*="grid-template-columns:repeat(4,1fr)"],
-      div[style*="grid-template-columns:repeat(5,1fr)"],
-      div[style*="grid-template-columns:1.4fr 1fr 1fr 1fr"] { grid-template-columns: repeat(2,1fr) !important; }
-      /* Drop the dark metric-band dividers once stacked */
-      div[style*="border-left:1px solid rgba(255,255,255,.1)"] { border-left: none !important; }
-      /* Hide fixed-pixel decorative visuals that can't reflow (home hero + ecosystem diagram) */
-      div[style*="height:500px"], div[style*="height:600px"] { display: none !important; }
-
-      /* Mobile nav */
+    /* ===== Nav collapses to a hamburger early (7 links need room) ===== */
+    @media (max-width: 1140px) {
       .site-nav .nav-links, .site-nav .nav-actions { display: none !important; }
       .nav-burger {
         display: flex !important; flex-direction: column; justify-content: center; gap: 5px;
@@ -57,6 +44,21 @@
       .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     }
 
+    /* ===== Tablet & below: collapse grids ===== */
+    @media (max-width: 960px) {
+      /* Collapse every grid to one column by default ... */
+      div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      /* ... but keep card grids and the footer at two columns */
+      div[style*="grid-template-columns:repeat(3,1fr)"],
+      div[style*="grid-template-columns:repeat(4,1fr)"],
+      div[style*="grid-template-columns:repeat(5,1fr)"],
+      div[style*="grid-template-columns:1.4fr 1fr 1fr 1fr"] { grid-template-columns: repeat(2,1fr) !important; }
+      /* Drop the dark metric-band dividers once stacked */
+      div[style*="border-left:1px solid rgba(255,255,255,.1)"] { border-left: none !important; }
+      /* Hide fixed-pixel decorative visuals that can't reflow (home hero + ecosystem diagram) */
+      div[style*="height:500px"], div[style*="height:600px"] { display: none !important; }
+    }
+
     /* ===== Phone ===== */
     @media (max-width: 620px) {
       div[style*="grid-template-columns:repeat(3,1fr)"],
@@ -74,11 +76,13 @@
       <img src="assets/blocksure-mark-navy.png" alt="Blocksure" style="height:30px; width:auto; display:block;">
       <span style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.01em; color:#0F1535;">Blocksure</span>
     </a>
-    <div class="nav-links" style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+    <div class="nav-links" style="display:flex; align-items:center; gap:23px; font-size:15px; font-weight:500;">
       <a href="platform.html" style="text-decoration:none; color:#4a5170;">Platform</a>
       <a href="marketplace.html" style="text-decoration:none; color:#4a5170;">Marketplace</a>
       <a href="solutions.html" style="text-decoration:none; color:#0F1535;">Solutions</a>
       <a href="simulab.html" style="text-decoration:none; color:#4a5170;">Simulab</a>
+      <a href="skills-atlas.html" style="text-decoration:none; color:#4a5170;">Skills Atlas</a>
+      <a href="edu-bi.html" style="text-decoration:none; color:#4a5170;">EduGrowth BI</a>
       <a href="index.html#contact" style="text-decoration:none; color:#4a5170;">Company</a>
     </div>
     <div class="nav-actions" style="display:flex; align-items:center; gap:18px;">
@@ -92,6 +96,8 @@
       <a href="marketplace.html">Marketplace</a>
       <a href="solutions.html">Solutions</a>
       <a href="simulab.html">Simulab</a>
+      <a href="skills-atlas.html">Skills Atlas</a>
+      <a href="edu-bi.html">EduGrowth BI</a>
       <a href="index.html#contact">Company</a>
       <a href="index.html#contact" class="nav-panel-signin">Sign in</a>
       <a href="index.html#contact" class="nav-panel-cta">Book a demo</a>
