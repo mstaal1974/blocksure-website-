@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulab — AI Simulation Builder — Blocksure</title>
+  <meta name="description" content="Conversational AI training that assesses competency against your accredited criteria — voice or text, with full reporting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; }
+    @keyframes floaty { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+    a { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body>
+<div style="background:#fff; font-family:'Hanken Grotesk',sans-serif; color:#0F1535; overflow-x:hidden;">
+  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; height:74px; padding:0 clamp(20px,4vw,52px); background:rgba(255,255,255,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid #ECEEF6; font-family:'Hanken Grotesk',sans-serif;">
+    <a href="index.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+      <img src="assets/blocksure-mark-navy.png" alt="Blocksure" style="height:30px; width:auto; display:block;">
+      <span style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.01em; color:#0F1535;">Blocksure</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+      <a href="platform.html" style="text-decoration:none; color:#4a5170;">Platform</a>
+      <a href="marketplace.html" style="text-decoration:none; color:#4a5170;">Marketplace</a>
+      <a href="solutions.html" style="text-decoration:none; color:#4a5170;">Solutions</a>
+      <a href="simulab.html" style="text-decoration:none; color:#0F1535;">Simulab</a>
+      <a href="index.html#contact" style="text-decoration:none; color:#4a5170;">Company</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="index.html#contact" style="text-decoration:none; font-size:15px; font-weight:600; color:#3a3fb8;">Sign in</a>
+      <a href="index.html#contact" style="text-decoration:none; font-size:14.5px; font-weight:700; color:#fff; background:linear-gradient(120deg,#5B8DEF,#8B5CF6); padding:11px 21px; border-radius:10px; box-shadow:0 6px 18px -6px rgba(110,90,230,.5);">Book a demo</a>
+    </div>
+  </nav>
+
+  <!-- HERO (dark) -->
+  <section style="position:relative; background:#0B1430; color:#fff; padding:74px clamp(20px,4vw,52px) 70px; overflow:hidden;">
+    <div style="position:absolute; right:-120px; top:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(31,166,188,.4), transparent 70%);"></div>
+    <div style="position:relative; max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; padding:7px 14px; border-radius:999px; background:rgba(127,227,240,.12); color:#7FE3F0; font-size:13.5px; font-weight:700; margin-bottom:24px; font-family:'JetBrains Mono';">SIMULAB</div>
+        <h1 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:clamp(38px,4.6vw,58px); line-height:1.04; letter-spacing:-0.022em; margin:0;">AI training that <span style="color:#7FE3F0;">assesses competency</span> as you talk.</h1>
+        <p style="font-size:19px; line-height:1.56; color:#9FB0D6; max-width:520px; margin:24px 0 0;">Conversational AI simulations that evaluate learners against criteria drawn directly from accredited units of competency — voice or text, fully configurable, with instant reporting.</p>
+        <div style="display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;">
+          <a href="index.html#contact" style="text-decoration:none; font-size:15.5px; font-weight:700; color:#06121F; background:#7FE3F0; padding:15px 28px; border-radius:12px;">Build a simulation</a>
+          <a href="#flow" style="text-decoration:none; font-size:15.5px; font-weight:700; color:#fff; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:15px 28px; border-radius:12px;">How it works</a>
+        </div>
+      </div>
+      <!-- chat mock -->
+      <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:22px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,.1);">
+          <span style="width:10px; height:10px; border-radius:50%; background:#46C07A;"></span>
+          <span style="font-size:13.5px; font-weight:600;">Difficult Patient · Coach mode on</span>
+          <span style="margin-left:auto; font-family:'JetBrains Mono'; font-size:11px; color:#7FE3F0;">02:14</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="align-self:flex-start; max-width:78%; background:rgba(255,255,255,.07); border-radius:14px 14px 14px 4px; padding:12px 15px; font-size:14px; color:#E7ECF8;">I've been waiting forty minutes. Why is my result taking so long?</div>
+          <div style="align-self:flex-end; max-width:78%; background:linear-gradient(135deg,#1FA6BC,#5B8DEF); border-radius:14px 14px 4px 14px; padding:12px 15px; font-size:14px; color:#fff;">I understand that's frustrating. Let me check on your specimen status right now and explain the next steps.</div>
+          <div style="align-self:flex-start; display:flex; gap:8px; align-items:center; font-family:'JetBrains Mono'; font-size:11px; color:#7FE3F0;"><span style="width:6px; height:6px; border-radius:50%; background:#7FE3F0;"></span>Empathy + de-escalation detected · scoring</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW: Build / Deploy / Report -->
+  <section id="flow" style="padding:88px clamp(20px,4vw,52px) 56px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <h2 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:clamp(28px,3.4vw,40px); letter-spacing:-0.02em; margin:0 0 36px; text-align:center;">Build. Deploy. Report.</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <div style="background:#F5F7FC; border:1px solid #EAEDF7; border-radius:20px; padding:30px 28px;">
+          <div style="font-family:'JetBrains Mono'; font-size:12px; color:#6E5AE6; margin-bottom:14px;">01 · BUILD</div>
+          <div style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:21px; margin-bottom:14px;">Define the scenario</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; color:#3a425f;">
+            <div>Knowledge base — it only answers what you define</div>
+            <div>Roles, behaviours &amp; context for AI and learner</div>
+            <div>Customise the voice</div>
+            <div>Evaluation criteria from accredited UOCs</div>
+            <div>Branching scenarios that change with input</div>
+          </div>
+        </div>
+        <div style="background:#F5F7FC; border:1px solid #EAEDF7; border-radius:20px; padding:30px 28px;">
+          <div style="font-family:'JetBrains Mono'; font-size:12px; color:#1FA6BC; margin-bottom:14px;">02 · DEPLOY</div>
+          <div style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:21px; margin-bottom:14px;">Run it anywhere</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; color:#3a425f;">
+            <div>Coach mode to assist students who need help</div>
+            <div>Voice or text input</div>
+            <div>Embed as an iframe widget or full page</div>
+            <div>Dynamic persona changes mid-conversation</div>
+            <div>Configurable timeouts, max time &amp; silence</div>
+          </div>
+        </div>
+        <div style="background:#0B1430; border-radius:20px; padding:30px 28px; color:#fff;">
+          <div style="font-family:'JetBrains Mono'; font-size:12px; color:#7FE3F0; margin-bottom:14px;">03 · REPORT</div>
+          <div style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:21px; margin-bottom:14px;">See everything, instantly</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; color:#C2CBE8;">
+            <div>Evaluation against your criteria</div>
+            <div>Sentiment analysis for both parties</div>
+            <div>Full transcript</div>
+            <div>Cost, time &amp; number of interactions</div>
+            <div>Date, time and complete history</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT: criteria from UOCs -->
+  <section style="padding:40px clamp(20px,4vw,52px) 80px;">
+    <div style="max-width:1240px; margin:0 auto; background:#F5F7FC; border-radius:24px; padding:clamp(32px,5vw,56px); display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono'; font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6E5AE6; margin-bottom:14px;">Accredited by design</div>
+        <h2 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.02em; margin:0;">Criteria pulled straight from units of competency</h2>
+        <p style="font-size:17px; line-height:1.56; color:#525a7d; margin:18px 0 0;">Because evaluation criteria can be derived directly from accredited UOCs, every simulation maps cleanly to the standards you already deliver — no manual rubric building required.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #EAEDF7; border-radius:16px; padding:24px;">
+        <div style="font-family:'JetBrains Mono'; font-size:11.5px; color:#8089a6; margin-bottom:14px;">EVALUATION · HLTENN036</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; align-items:center; gap:12px;"><div style="flex:1; font-size:14px; font-weight:600;">Communicates clearly under pressure</div><div style="font-family:'Bricolage Grotesque'; font-weight:700; color:#1FA6BC;">92%</div></div>
+          <div style="height:7px; border-radius:99px; background:#EEF1F8;"><div style="width:92%; height:100%; border-radius:99px; background:linear-gradient(90deg,#1FA6BC,#5B8DEF);"></div></div>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:6px;"><div style="flex:1; font-size:14px; font-weight:600;">Applies de-escalation technique</div><div style="font-family:'Bricolage Grotesque'; font-weight:700; color:#6E5AE6;">78%</div></div>
+          <div style="height:7px; border-radius:99px; background:#EEF1F8;"><div style="width:78%; height:100%; border-radius:99px; background:linear-gradient(90deg,#5B8DEF,#8B5CF6);"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:0 clamp(20px,4vw,52px) 96px;">
+    <div style="max-width:1240px; margin:0 auto; border-radius:26px; background:linear-gradient(135deg,#0B1430,#13384a 70%,#1FA6BC); padding:60px clamp(28px,5vw,64px); display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;">
+      <div style="max-width:560px;">
+        <h2 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:clamp(26px,3vw,38px); line-height:1.1; letter-spacing:-0.02em; color:#fff; margin:0;">Turn any UOC into a live simulation</h2>
+        <p style="font-size:17px; line-height:1.55; color:#CDE9EE; margin:16px 0 0;">Build your first scenario in an afternoon.</p>
+      </div>
+      <a href="index.html#contact" style="text-decoration:none; font-size:16px; font-weight:700; color:#06121F; background:#fff; padding:16px 32px; border-radius:12px; white-space:nowrap;">Book a demo</a>
+    </div>
+  </section>
+
+  <footer id="contact" style="background:#0B1430; color:#C7D0E8; font-family:'Hanken Grotesk',sans-serif; padding:72px clamp(20px,4vw,52px) 36px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.1);">
+        <div>
+          <div style="display:flex; align-items:center; gap:11px; margin-bottom:18px;">
+            <img src="assets/blocksure-mark.png" alt="Blocksure" style="height:34px; width:auto;">
+            <span style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:700; color:#fff; letter-spacing:-0.01em;">Blocksure</span>
+          </div>
+          <p style="font-size:15px; line-height:1.6; color:#8C9AC0; max-width:330px; margin:0 0 22px;">The skills-economy infrastructure. Quality-assured, machine-readable skills as currency &mdash; the bank &amp; exchange for the future of work.</p>
+          <div style="font-size:14.5px; line-height:1.9; color:#A9B5D6;">
+            <div>mstaal@blocksure.com.au</div>
+            <div>+61 402 108 296</div>
+            <div>349 Coronation Drive, Milton, QLD 4064 &mdash; Australia</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#6B79A0; margin-bottom:16px;">Platform</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:15px;">
+            <a href="marketplace.html" style="color:#C7D0E8; text-decoration:none;">Microcredentials Marketplace</a>
+            <a href="skills-database.html" style="color:#C7D0E8; text-decoration:none;">Skills Database &amp; OSMT</a>
+            <a href="credentials.html" style="color:#C7D0E8; text-decoration:none;">Digital Credentials</a>
+            <a href="simulab.html" style="color:#C7D0E8; text-decoration:none;">Simulab</a>
+            <a href="micropromote.html" style="color:#C7D0E8; text-decoration:none;">Micropromote</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#6B79A0; margin-bottom:16px;">Solutions</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:15px;">
+            <a href="solutions.html" style="color:#C7D0E8; text-decoration:none;">For RTOs</a>
+            <a href="solutions.html" style="color:#C7D0E8; text-decoration:none;">For Employers</a>
+            <a href="solutions.html" style="color:#C7D0E8; text-decoration:none;">For Government</a>
+            <a href="solutions.html" style="color:#C7D0E8; text-decoration:none;">For Individuals</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#6B79A0; margin-bottom:16px;">Company</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:15px;">
+            <a href="platform.html" style="color:#C7D0E8; text-decoration:none;">The ecosystem</a>
+            <a href="index.html#standards" style="color:#C7D0E8; text-decoration:none;">Standards &amp; QA</a>
+            <a href="index.html#contact" style="color:#C7D0E8; text-decoration:none;">Contact</a>
+            <a href="index.html#contact" style="color:#C7D0E8; text-decoration:none;">Book a demo</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-top:26px; font-size:13.5px; color:#6B79A0;">
+        <span>&copy; 2026 Blocksure Pty Ltd. All rights reserved.</span>
+        <span style="font-family:'Hanken Grotesk';">Aligned to ESCO &middot; O*NET &middot; SFIA &middot; Open Badges 3.0</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
